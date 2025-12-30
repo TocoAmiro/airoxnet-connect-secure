@@ -28,15 +28,15 @@ const values = [
 
 const ValuesSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section ref={ref} className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-3xl md:text-4xl font-bold mb-16 text-center"
         >
           ارزش‌های <span className="text-primary">ما</span>
@@ -46,12 +46,12 @@ const ValuesSection = () => {
           {values.map((value, index) => (
             <motion.div
               key={value.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.4,
+                delay: index * 0.06,
+                ease: "easeOut",
               }}
               className="glass-card-hover p-6 text-center"
             >

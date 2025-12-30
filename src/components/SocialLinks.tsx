@@ -36,15 +36,15 @@ const links = [
 
 const SocialLinks = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section ref={ref} className="py-24 px-4 relative">
       <div className="max-w-4xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-3xl md:text-4xl font-bold mb-16 text-center"
         >
           راه‌های <span className="text-primary">ارتباطی</span>
@@ -57,12 +57,12 @@ const SocialLinks = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.4,
+                delay: index * 0.06,
+                ease: "easeOut",
               }}
               className="glass-card-hover p-5 flex items-center gap-4 group"
             >

@@ -10,21 +10,21 @@ const HeroSection = () => {
         <ThemeToggle />
       </div>
 
-      {/* Floating Glows */}
+      {/* Floating Glows - Static */}
       <div className="floating-glow w-96 h-96 bg-primary -top-48 -right-48 absolute" />
       <div className="floating-glow w-72 h-72 bg-accent -bottom-36 -left-36 absolute" />
       
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="text-center z-10"
       >
         {/* Logo */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           className="mb-8"
         >
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl glass-card mb-6">
@@ -34,18 +34,18 @@ const HeroSection = () => {
 
         {/* Brand Name */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
           className="text-5xl md:text-7xl font-bold mb-4 tracking-tight"
         >
           <span className="text-gradient">آیروکس‌نت</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           className="text-xl md:text-2xl text-muted-foreground mb-6 font-light"
         >
           AiroxNet
@@ -55,15 +55,15 @@ const HeroSection = () => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
           className="glow-line max-w-xs mx-auto mb-8"
         />
 
         {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
           className="text-lg md:text-xl text-foreground/80 mb-12 max-w-lg mx-auto leading-relaxed"
         >
           اینترنت امن، پایدار و مدرن
@@ -71,28 +71,22 @@ const HeroSection = () => {
 
         {/* Feature Icons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          transition={{ duration: 0.4, delay: 0.35, ease: "easeOut" }}
           className="flex items-center justify-center gap-6 mb-12"
         >
           {[
             { icon: Shield, label: "امنیت" },
             { icon: Wifi, label: "پایداری" },
             { icon: Lock, label: "حریم خصوصی" },
-          ].map((item, index) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-              className="flex flex-col items-center gap-2"
-            >
+          ].map((item) => (
+            <div key={item.label} className="flex flex-col items-center gap-2">
               <div className="icon-circle w-14 h-14">
                 <item.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
               </div>
               <span className="text-sm text-muted-foreground">{item.label}</span>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
 
@@ -101,9 +95,9 @@ const HeroSection = () => {
           href="https://t.me/AIroxNetBot"
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+          transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
           className="glass-button inline-flex items-center gap-3 text-primary-foreground"
         >
           <span>شروع کنید</span>
@@ -117,16 +111,12 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2"
-        >
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2 animate-bounce">
           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

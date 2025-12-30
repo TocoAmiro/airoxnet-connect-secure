@@ -24,27 +24,27 @@ const plans = [
 
 const PricingSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section ref={ref} className="py-24 px-4 relative">
-      {/* Background Glow */}
+      {/* Background Glow - Static */}
       <div className="floating-glow w-96 h-96 bg-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute opacity-10" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-3xl md:text-4xl font-bold mb-6 text-center"
         >
           قیمت <span className="text-primary">سرویس‌ها</span>
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
           className="text-muted-foreground text-center mb-16 max-w-lg mx-auto"
         >
           قیمت‌ها ممکن است با توجه به شرایط ارزی و هزینه سرورها به‌روزرسانی شوند
@@ -54,12 +54,12 @@ const PricingSection = () => {
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.6,
-                delay: 0.2 + index * 0.15,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.4,
+                delay: 0.1 + index * 0.08,
+                ease: "easeOut",
               }}
               className={`glass-card-hover p-8 relative ${
                 plan.popular ? "border-primary/50" : ""
