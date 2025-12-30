@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import { Shield, Wifi, Lock } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      {/* Theme Toggle */}
+      <div className="absolute top-6 left-6 z-20">
+        <ThemeToggle />
+      </div>
+
       {/* Floating Glows */}
       <div className="floating-glow w-96 h-96 bg-primary -top-48 -right-48 absolute" />
       <div className="floating-glow w-72 h-72 bg-accent -bottom-36 -left-36 absolute" />
