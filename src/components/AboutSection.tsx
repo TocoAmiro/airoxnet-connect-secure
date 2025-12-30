@@ -4,30 +4,30 @@ import { useRef } from "react";
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section ref={ref} className="py-24 px-4 relative">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="glass-card p-8 md:p-12"
         >
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
             className="text-3xl md:text-4xl font-bold mb-8 text-center"
           >
             درباره <span className="text-primary">آیروکس‌نت</span>
           </motion.h2>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             className="space-y-6 text-foreground/80 leading-relaxed text-lg"
           >
             <p>
@@ -42,20 +42,20 @@ const AboutSection = () => {
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
             className="glow-line my-10"
           />
 
           {/* Founder Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
             className="text-center"
           >
             <h3 className="text-xl font-semibold mb-4 text-foreground">بنیان‌گذار</h3>
             <div className="inline-flex items-center gap-4 glass-card p-4 px-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xl font-bold">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-xl font-bold text-primary-foreground">
                 ا
               </div>
               <div className="text-right">
