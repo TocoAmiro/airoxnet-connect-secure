@@ -6,6 +6,48 @@
 
 @layer base {
   :root {
+    --background: 210 40% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 199 100% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 220 25% 15%;
+
+    --muted: 210 30% 92%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 199 100% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 85%;
+    --input: 210 20% 85%;
+    --ring: 199 100% 40%;
+
+    --radius: 1rem;
+
+    /* Custom Glassmorphism - Light */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 210 20% 90%;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 136, 204, 0.1);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(199, 100%, 40%) 0%, hsl(220, 80%, 50%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(199, 100%, 40%, 0.1) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(180deg, hsl(210, 40%, 98%) 0%, hsl(210, 35%, 95%) 100%);
+  }
+
+  .dark {
     --background: 220 25% 6%;
     --foreground: 210 40% 98%;
 
@@ -34,9 +76,7 @@
     --input: 220 20% 20%;
     --ring: 199 100% 40%;
 
-    --radius: 1rem;
-
-    /* Custom Glassmorphism */
+    /* Custom Glassmorphism - Dark */
     --glass-bg: 220 20% 15%;
     --glass-border: 220 20% 30%;
     --glass-shadow: 0 8px 32px 0 rgba(0, 136, 204, 0.15);
@@ -60,8 +100,13 @@
   body {
     @apply bg-background text-foreground font-vazir antialiased;
     direction: rtl;
-    background: linear-gradient(180deg, hsl(220, 25%, 6%) 0%, hsl(220, 30%, 3%) 100%);
+    background: hsl(var(--background));
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background: linear-gradient(180deg, hsl(220, 25%, 6%) 0%, hsl(220, 30%, 3%) 100%);
   }
 }
 
