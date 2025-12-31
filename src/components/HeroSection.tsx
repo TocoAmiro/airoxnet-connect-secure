@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Shield, Wifi, Lock } from "lucide-react";
+import { Wifi, Lock, Shield } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import airoxnetLogo from "@/assets/airoxnet-logo.jpg";
 
 const HeroSection = () => {
   return (
@@ -27,8 +28,12 @@ const HeroSection = () => {
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl glass-card mb-6">
-            <Shield className="w-12 h-12 text-primary" strokeWidth={1.5} />
+          <div className="inline-flex items-center justify-center w-28 h-28 rounded-3xl glass-card mb-6 overflow-hidden p-2">
+            <img 
+              src={airoxnetLogo} 
+              alt="آیروکس‌نت" 
+              className="w-full h-full object-contain rounded-2xl"
+            />
           </div>
         </motion.div>
 
