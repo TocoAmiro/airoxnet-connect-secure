@@ -28,11 +28,11 @@ const HeroSection = () => {
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="inline-flex items-center justify-center w-28 h-28 rounded-3xl glass-card mb-6 overflow-hidden p-2">
+          <div className="inline-flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-3xl glass-card mb-6 overflow-hidden p-3">
             <img 
               src={airoxnetLogo} 
               alt="آیروکس‌نت" 
-              className="w-full h-full object-contain rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl"
             />
           </div>
         </motion.div>
