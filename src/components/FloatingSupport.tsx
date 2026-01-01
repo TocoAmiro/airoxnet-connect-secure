@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Users, Instagram } from "lucide-react";
-import supportLogo from "@/assets/airoxnet-support.png";
+import SupportIcon from "./icons/SupportIcon";
 
 const supportLinks = [
   {
@@ -117,11 +117,7 @@ const FloatingSupport = () => {
           {isOpen ? (
             <X className="w-6 h-6 text-primary-foreground" />
           ) : (
-            <img 
-              src={supportLogo} 
-              alt="پشتیبانی آیروکس‌نت" 
-              className="w-12 h-12 object-contain rounded-full"
-            />
+            <SupportIcon className="w-12 h-12" />
           )}
         </motion.div>
       </motion.button>
