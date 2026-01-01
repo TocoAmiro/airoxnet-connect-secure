@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Wifi, Lock, Shield } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import airoxnetLogo from "@/assets/airoxnet-logo.jpg";
+import AiroxNetLogo from "./icons/AiroxNetLogo";
 
 const HeroSection = () => {
   return (
@@ -29,11 +29,7 @@ const HeroSection = () => {
           className="mb-8"
         >
           <div className="inline-flex items-center justify-center w-32 h-32 md:w-40 md:h-40 rounded-3xl glass-card mb-6 overflow-hidden p-3">
-            <img 
-              src={airoxnetLogo} 
-              alt="آیروکس‌نت" 
-              className="w-full h-full object-cover rounded-2xl"
-            />
+            <AiroxNetLogo className="w-full h-full" />
           </div>
         </motion.div>
 
