@@ -117,7 +117,7 @@ const FloatingSupport = () => {
           {isOpen ? (
             <X className="w-6 h-6 text-primary-foreground" />
           ) : (
-            <SupportIcon className="w-12 h-12" />
+            <SupportIcon className="w-8 h-8" />
           )}
         </motion.div>
       </motion.button>
